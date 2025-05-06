@@ -1,12 +1,26 @@
-# React + Vite
+# 🛠️ RAT (Relatório de Atendimento Técnico)
+Este projeto é um formulário de Ordem de Serviço digital, desenvolvido para a DASA, com suporte a assinatura manual (via mouse ou touch), coleta de dados técnicos e geração de PDF. É ideal para técnicos em campo registrarem atendimentos de forma prática e organizada.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Funcionalidades
+Formulário completo para atendimento técnico
 
-Currently, two official plugins are available:
+Campos obrigatórios para identificação e equipamento
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Assinatura digital usando o mouse ou touch
 
-## Expanding the ESLint configuration
+Botão para limpar assinatura
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Botão de compartilhamento de dados por ID único
+
+Preparação para geração de PDF
+
+Interface responsiva e simples
+
+## ✅ Requisitos
+Navegador (Chrome, Firefox, Edge, Brave)
+
+## 🖊️ Recursos Usados
+React
+Vite
+Canvas API 
+
