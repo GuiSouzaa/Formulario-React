@@ -1,15 +1,18 @@
 import React from "react";
 import { gerarPDF } from '../scripts/Gerarpdf';
 import Assinatura from "../scripts/Assinatura";
+import {compartilhar} from '../scripts/LerEnviarDados';
+
 
 
 function Formulario() {
   return (
     
+    
     <div>
       <div className="container" id="conteudo-pdf">
         <h1>DASA - Ordem de Serviço</h1>
-
+        
         <form id="form-rat">
           <p className="campo-colab">Campo Colaborador</p>
           <hr />
@@ -142,9 +145,9 @@ function Formulario() {
             <label>Hora</label>
             <input type="time" id="Tempo" required />
 
-            <button type="button" id="compartilhar">
-              Compartilhar
-            </button>
+            <button type="button" id="compartilhar" onClick={compartilhar}>
+            Compartilhar
+          </button>
             <button id="Gerar-PDF" onClick={gerarPDF}>Gerar PDF</button>
             
 

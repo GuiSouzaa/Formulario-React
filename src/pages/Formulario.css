@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} /*Se tirar esse campo eu acho que para de acontecer o bug do dowload em pdf*/
-
+}
+/* Aqui estava o bug que deixava a tela pequena 
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -13,24 +13,26 @@ body {
     align-items: center;     
     min-height: 100vh;       
     background-color: #f5f5f5; 
-}
-
-form {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #000;
-}
+} */
 
 .container {
+    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#form-rat {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #000;
 }
 
 input, textarea {
@@ -57,6 +59,7 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
 }
+
 
 .checkbox-tipo-atendimento,
 .tipo-equipamento {
@@ -216,4 +219,3 @@ hr {
         height: auto !important;
     }
 }
-

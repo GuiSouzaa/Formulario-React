@@ -1,6 +1,5 @@
 // src/App.jsx
 import React, { useEffect } from 'react';
-import './App.css';
 import './pages/Formulario.css'; 
 import Formulario from './pages/Formulario.jsx';
 import { db } from './firebase/firebaseConfig';
