@@ -1,25 +1,18 @@
 // src/App.jsx
-import React, { useEffect } from 'react';
+import React from 'react';
 import './pages/Formulario.css'; 
 import Formulario from './pages/Formulario.jsx';
-import { db } from './firebase/firebaseConfig';
-import { doc, getDoc } from 'firebase/firestore';
+import ExibirDados from './components/ExibirDados.jsx';
+import { useLocation } from 'react-router-dom';
 
 function App() {
-  useEffect(() => {
-    const docRef = doc(db, "users", "IvduJfKvGUyuzKIc4OL1");
-
-    const getData = async () => {
-      const docSnap = await getDoc(docRef);
-      console.log(docSnap.data());
-    };
-
-    getData();
-  }, []);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get("id");
 
   return (
     <div className="App">
-      <Formulario />
+      {id ? <ExibirDados /> : <Formulario />}
     </div>
   );
 }

@@ -7,7 +7,7 @@ import logoDasa from '../assets/images/logoDasa1.png'; */
 
 
 
-function Formulario() {
+function Formulario({dados}) {
   return (
     
     
@@ -29,7 +29,7 @@ function Formulario() {
             <label>
               Nome da Unidade <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Unidade" required />
+            <input type="text" id="Unidade" required defaultValue={dados?.unidade || ""}  />
 
             <label>
               Endereço <span style={{ color: "red" }}>*</span>

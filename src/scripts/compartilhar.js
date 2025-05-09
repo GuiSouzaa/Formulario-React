@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+/* import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 // Config do Firebase "Precisa ter nos dois arquivos que compartilham"
@@ -57,3 +57,4 @@ document.addEventListener("DOMContentLoaded", preencherFormulario);
 
 
 
+ */
