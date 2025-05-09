@@ -2,6 +2,8 @@ import React from "react";
 import { gerarPDF } from '../scripts/Gerarpdf';
 import Assinatura from "../scripts/Assinatura";
 import {compartilhar} from '../scripts/LerEnviarDados';
+/* import logoSonda from '../assets/images/logoSonda.png';
+import logoDasa from '../assets/images/logoDasa1.png'; */
 
 
 
@@ -11,7 +13,13 @@ function Formulario() {
     
     <div>
       <div className="container" id="conteudo-pdf">
-        <h1>DASA - Ordem de Serviço</h1>
+        
+        <div className="logoAndTitulo">
+{/*           <img className="logoSonda" src={logoSonda} alt="logo sonda" title="Logo Sonda" />
+*/}        <h1>DASA - Ordem de Serviço</h1>
+{/*         <img className="logoDasa" src={logoDasa} alt="Logo dasa" title="Logo Dasa" />
+ */}        </div>
+        
         
         <form id="form-rat">
           <p className="campo-colab">Campo Colaborador</p>
