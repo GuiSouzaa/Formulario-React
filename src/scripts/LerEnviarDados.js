@@ -15,7 +15,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Exporte a função diretamente
 export const compartilhar = async () => {
   try {
     const unidade = document.getElementById("Unidade").value;
@@ -30,12 +29,12 @@ export const compartilhar = async () => {
       // ... restante dos dados ...
     });
 
-    const link = `${window.location.origin}${window.location.pathname}?id=${docRef.id}`;
+    const link = `${window.location.origin}${window.location.pathname}?id=${docRef.id}`; /* Gerador de id */
     await navigator.clipboard.writeText(link);
     alert(`Dados salvos com sucesso!\nO link foi copiado para a área de transferência:\n${link}`);
 
   } catch (e) {
     console.error("Erro ao salvar: ", e);
-    alert("Erro ao salvar no Firebase.");
+    alert("Erro ao salvar no Firebase. Tente novamente daqui alguns segundos.");
   }
 };

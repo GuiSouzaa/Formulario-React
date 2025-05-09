@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import {logEvent } from "firebase/analytics"; // Importe logEvent aqui
+import {logEvent } from "firebase/analytics"; // Importe logEvent para parar de ficar com erro
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"; 
 import { getAnalytics } from "firebase/analytics";

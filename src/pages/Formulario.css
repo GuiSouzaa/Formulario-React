@@ -3,6 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+  --dasa-azul-escuro: #000e40;
+  --dasa-azul-claro: #a6e1ff;
+  --dasa-vermelho: #ff4e33;
+  --dasa-branco: #ffffff;
+  --dasa-azul: #0037ff;
+  --dasa-amarelo: #e5ff00;
+  --dasa-bege: #d1b287;
+}
+
+body{
+    background-color: var(--dasa-azul-claro);
+}
+
 /* Aqui estava o bug que deixava a tela pequena 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -30,7 +45,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    margin-bottom: 20px; 
   }
   
   .logoSonda {
@@ -39,16 +53,17 @@ body {
   }
   
   h1 {
-   
+    font-size: 33px;
     margin: 0; 
+    margin-top: 10px;
     text-align: center; 
     flex-grow: 1; /* Faz o título ocupar o espaço restante entre as logos */
   }
   
   .logoDasa {
-    
-    max-width: 100px;
+    max-width: 140px;
     height: auto;
+    margin-bottom: 20px;
   }
 
 #form-rat {
@@ -126,7 +141,7 @@ h1 {
     display: block;
     margin: 20px 0 10px;
     padding: 8px 30px;
-    background-color: #007BFF;  
+    background-color: var(--dasa-azul);  
     color: white;               
     border: none;
     border-radius: 5px;        
@@ -136,7 +151,7 @@ h1 {
 }
 
 #Limpar:hover {
-    background-color: #0056b3;
+    background-color: var(--dasa-azul-escuro);
 }
 
 #Gerar-PDF {
@@ -152,17 +167,25 @@ h1 {
     transition: background-color 0.3s;
 }
 
+#Gerar-PDF:hover {
+    background-color: #218838;
+}
+
 #compartilhar{
     display: block;
     margin: 10px 0;
     padding: 8px 30px;
-    background-color: #007BFF;  
+    background-color: var(--dasa-azul);  
     color: white;               
     border: none;
     border-radius: 5px;         
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+#compartilhar:hover{
+    background-color: var(--dasa-azul-escuro);
 }
 
 .campo-colab{
@@ -191,13 +214,8 @@ hr {
 }
 
 
-#Gerar-PDF:hover {
-    background-color: #218838;
-}
 
-#compartilhar:hover{
-    background-color: #0056b3;
-}
+/* Desing responsivel */
 
 @media (max-width: 600px) {
     body {
@@ -229,8 +247,6 @@ hr {
     
 }
 
-
-
 @media print {
     .page-break {
         page-break-before: always;
@@ -244,3 +260,27 @@ hr {
         height: auto !important;
     }
 }
+
+@media (max-width: 768px){
+    .logoAndTitulo{
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logoSonda{
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
+
+    h1{
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .logoDasa{
+        max-width: 90px;
+        margin-top: 10px;
+    }
+}
+
