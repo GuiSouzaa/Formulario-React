@@ -93,27 +93,27 @@ function Formulario({dados}) {
             <fieldset className="checkbox-tipo-atendimento">
               <legend>Tipo de Atendimento</legend>
               <label>
-                <input type="checkbox" id="Field" name="Field" defaultChecked={dados?.field}/> Field
+                <input type="checkbox" id="Field" name="Field" checked={dados?.field}/> Field
               </label>
               <label>
-
-                <input type="checkbox" id="Remoto" name="Remoto" defaultChecked={dados?.remoto}/> Remoto
+                
+                <input type="checkbox" id="Remoto" name="Remoto" checked={dados?.remoto}/> Remoto
               </label>
               <label>
-                <input type="checkbox" id="Projeto" name="Projeto" defaultChecked={dados?.projeto}/> Projeto
+                <input type="checkbox" id="Projeto" name="Projeto" checked={dados?.projeto}/> Projeto
               </label>
             </fieldset>
 
             <fieldset className="tipo-equipamento">
               <legend>Tipo de Equipamento</legend>
               <label>
-                <input type="checkbox" id="Notebook" name="Notebook" defaultChecked={dados?.notebook}/> Notebook
+                <input type="checkbox" id="Notebook" name="Notebook" checked={dados?.notebook}/> Notebook
               </label>
               <label>
-                <input type="checkbox" id="Desktop" name="Desktop" defaultChecked={dados?.desktop}/> Desktop
+                <input type="checkbox" id="Desktop" name="Desktop" checked={dados?.desktop}/> Desktop
               </label>
               <label>
-                <input type="checkbox" id="Monitor" name="Monitor" defaultChecked={dados?.monitor}/> Monitor
+                <input type="checkbox" id="Monitor" name="Monitor" checked={dados?.monitor}/> Monitor
               </label>
             </fieldset>
           </div>
@@ -143,10 +143,7 @@ function Formulario({dados}) {
               Assinatura Colaborador <span style={{ color: "red" }}>*</span>
             </label>
             <Assinatura id="Assinatura" defaultValue={dados?.assinatura}></Assinatura>
-            {/* Esse botao precisa ficar desativado para evitar duplicidade: 
-            <button type="button" id="Limpar">Limpar</button> */}
-            
-
+          
             <label>Data</label>
             <input type="date" id="Data" defaultValue={dados?.data} />
 

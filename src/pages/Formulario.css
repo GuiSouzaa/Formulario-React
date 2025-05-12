@@ -130,7 +130,7 @@ h1 {
 #Assinatura {
     width: 100%;
     max-width: 700px; 
-    height: 100px;
+    height: 150px;/*  Para alterar o tamanho eu preciso alterar o tamanho no arquivo Assinatura.jsx, se eu nao alterar o tamanho lá ele buga */
     border: 2px solid #ccc;  
     border-radius: 12px;     
     margin-top: 10px;         

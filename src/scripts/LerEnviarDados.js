@@ -39,7 +39,7 @@ export const compartilhar = async () => {
     const problemaRelatado = document.getElementById("Problema").value;
     const realizadoRelatado = document.getElementById("Realizada").value;
     const assinaturaCanvas = document.getElementById("Assinatura");
-    const assinatura = assinaturaCanvas.toDataURL(); 
+    const assinatura = assinaturaCanvas.toDataURL(); //Jeito certo de pegar o valor da assinatura
     const data = document.getElementById("Data").value;
     const hora = document.getElementById("Tempo").value;
 
@@ -69,7 +69,7 @@ export const compartilhar = async () => {
       data,
       hora
     });
-
+    
     const link = `${window.location.origin}${window.location.pathname}?id=${docRef.id}`; 
     await navigator.clipboard.writeText(link);
     alert(`Dados salvos com sucesso!\nO link foi copiado para a área de transferência:\n${link}`);

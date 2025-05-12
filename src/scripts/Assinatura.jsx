@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 
-const Assinatura = () => {
+const Assinatura = ({ defaultValue }) => {
   const canvasRef = useRef(null);
-  const desenhandoRef = useRef(false); // Usar useRef para manter o estado sem causar re-renderizações
+  const desenhandoRef = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -10,13 +10,22 @@ const Assinatura = () => {
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
-      canvas.height = 100; // Você pode ajustar conforme necessário
+      canvas.height = 150;
     };
 
     window.addEventListener('resize', resizeCanvas);
-    resizeCanvas(); // Redimensiona no primeiro carregamento
+    resizeCanvas();
 
-    // Funções de evento de desenho
+    // O canva entende que é uma imagem
+    if (defaultValue) {
+      const img = new Image();
+      img.onload = () => {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+      };
+      img.src = defaultValue;
+    }
+
     const startDrawing = (e) => {
       desenhandoRef.current = true;
       context.beginPath();
@@ -39,7 +48,15 @@ const Assinatura = () => {
     canvas.addEventListener('mouseup', stopDrawing);
     canvas.addEventListener('mouseleave', stopDrawing);
 
-    // Eventos touch (mobile)
+    const getTouchPos = (canvas, e) => {
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      return {
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top,
+      };
+    };
+
     const startTouch = (e) => {
       e.preventDefault();
       desenhandoRef.current = true;
@@ -65,7 +82,6 @@ const Assinatura = () => {
     canvas.addEventListener('touchend', endTouch);
 
     return () => {
-      // Limpa os eventos quando o componente é desmontado
       window.removeEventListener('resize', resizeCanvas);
       canvas.removeEventListener('mousedown', startDrawing);
       canvas.removeEventListener('mousemove', draw);
@@ -75,19 +91,8 @@ const Assinatura = () => {
       canvas.removeEventListener('touchmove', moveTouch);
       canvas.removeEventListener('touchend', endTouch);
     };
-  }, []);
+  }, [defaultValue]); // <- precisa escutar alterações de defaultValue que está no meu id da Assinatura
 
-  // Pega posição do toque no canvas
-  const getTouchPos = (canvas, e) => {
-    const rect = canvas.getBoundingClientRect();
-    const touch = e.touches[0];
-    return {
-      x: touch.clientX - rect.left,
-      y: touch.clientY - rect.top,
-    };
-  };
-
-  // Função para limpar o canvas
   const limparCanvas = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -97,7 +102,11 @@ const Assinatura = () => {
   return (
     <div>
       <div id="conteudo-pdf">
-        <canvas ref={canvasRef} id="Assinatura" style={{ border: '1px solid black', width: '100%' }}></canvas>
+        <canvas
+          ref={canvasRef}
+          id="Assinatura"
+          style={{ border: '1px solid black', width: '100%' }}
+        ></canvas>
       </div>
       <button onClick={limparCanvas} id="Limpar">Limpar</button>
     </div>
