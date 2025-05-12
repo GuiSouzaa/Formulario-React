@@ -20,16 +20,57 @@ export const compartilhar = async () => {
     const unidade = document.getElementById("Unidade").value;
     const endereco = document.getElementById("Endereco").value;
     const cidade = document.getElementById("Cidade").value;
-    // ... restante dos campos ...
+    const estado = document.getElementById("Estado").value;
+    const setor = document.getElementById("Setor").value;
+    const colaborador = document.getElementById("Colaborador").value;
+    const telefone = document.getElementById("Telefone").value;
+    const chamado = document.getElementById("Chamado").value;
+    const patrimonio = document.getElementById("Patrimonio").value;
+    const serial = document.getElementById("Serial").value;
+    const marca = document.getElementById("Marca").value;
+    const modelo = document.getElementById("Modelo").value;
+    const field = document.getElementById("Field").checked;
+    const remoto = document.getElementById("Remoto").checked;
+    const projeto = document.getElementById("Projeto").checked;
+    const notebook = document.getElementById("Notebook").checked;
+    const desktop = document.getElementById("Desktop").checked;
+    const monitor = document.getElementById("Monitor").checked;
+    const tecnico = document.getElementById("tecnico").value;
+    const problemaRelatado = document.getElementById("Problema").value;
+    const realizadoRelatado = document.getElementById("Realizada").value;
+    const assinaturaCanvas = document.getElementById("Assinatura");
+    const assinatura = assinaturaCanvas.toDataURL(); 
+    const data = document.getElementById("Data").value;
+    const hora = document.getElementById("Tempo").value;
 
     const docRef = await addDoc(collection(db, "rat"), {
       unidade,
       endereco,
-      cidade
-      // ... restante dos dados ...
+      cidade,
+      estado,
+      setor,
+      colaborador,
+      telefone,
+      chamado,
+      patrimonio,
+      serial,
+      marca,
+      modelo,
+      field,
+      remoto,
+      projeto,
+      notebook,
+      desktop,
+      monitor,
+      tecnico,
+      problemaRelatado,
+      realizadoRelatado,
+      assinatura,
+      data,
+      hora
     });
 
-    const link = `${window.location.origin}${window.location.pathname}?id=${docRef.id}`; /* Gerador de id */
+    const link = `${window.location.origin}${window.location.pathname}?id=${docRef.id}`; 
     await navigator.clipboard.writeText(link);
     alert(`Dados salvos com sucesso!\nO link foi copiado para a área de transferência:\n${link}`);
 

@@ -28,37 +28,37 @@ function Formulario({dados}) {
             <label>
               Nome da Unidade <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Unidade" required defaultValue={dados?.unidade || ""}  />
+            <input type="text" id="Unidade" required defaultValue={dados?.unidade}  />
 
             <label>
               Endereço <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Endereco" required />
+            <input type="text" id="Endereco" required defaultValue={dados?.endereco} />
 
             <label>
               Cidade <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Cidade" required />
+            <input type="text" id="Cidade" required defaultValue={dados?.cidade} />
 
             <label>
               Estado <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Estado" required />
+            <input type="text" id="Estado" required defaultValue={dados?.estado} />
 
             <label>
               Setor <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Setor" required />
+            <input type="text" id="Setor" required defaultValue={dados?.setor} />
 
             <label>
               Nome do colaborador/Solicitante <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Colaborador" required />
+            <input type="text" id="Colaborador" required defaultValue={dados?.colaborador}/>
 
             <label>
               Telefone <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Telefone" maxLength={11} />
+            <input type="text" id="Telefone" maxLength={11}  defaultValue={dados?.telefone}/>
           </div>
 
           <p className="campo-field">Campo Técnico</p>
@@ -68,51 +68,52 @@ function Formulario({dados}) {
             <label>
               N° Chamado <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Chamado" required />
+            <input type="text" id="Chamado" required defaultValue={dados?.chamado} />
 
             <label>
               N° Patrimonio <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Patrimonio" required />
+            <input type="text" id="Patrimonio" required defaultValue={dados?.patrimonio} />
 
             <label>
               N° Serie <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Serial" required />
+            <input type="text" id="Serial" required defaultValue={dados?.serial}/>
 
             <label>
               Marca <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Marca" required />
+            <input type="text" id="Marca" required defaultValue={dados?.marca} />
 
             <label>
               Modelo <span style={{ color: "red" }}>*</span>
             </label>
-            <input type="text" id="Modelo" />
+            <input type="text" id="Modelo" required defaultValue={dados?.modelo}/>
 
             <fieldset className="checkbox-tipo-atendimento">
               <legend>Tipo de Atendimento</legend>
               <label>
-                <input type="checkbox" id="Field" name="Field" /> Field
+                <input type="checkbox" id="Field" name="Field" defaultChecked={dados?.field}/> Field
               </label>
               <label>
-                <input type="checkbox" id="Remoto" name="Remoto" /> Remoto
+
+                <input type="checkbox" id="Remoto" name="Remoto" defaultChecked={dados?.remoto}/> Remoto
               </label>
               <label>
-                <input type="checkbox" id="Projeto" name="Projeto" /> Projeto
+                <input type="checkbox" id="Projeto" name="Projeto" defaultChecked={dados?.projeto}/> Projeto
               </label>
             </fieldset>
 
             <fieldset className="tipo-equipamento">
               <legend>Tipo de Equipamento</legend>
               <label>
-                <input type="checkbox" id="Notebook" name="Notebook" /> Notebook
+                <input type="checkbox" id="Notebook" name="Notebook" defaultChecked={dados?.notebook}/> Notebook
               </label>
               <label>
-                <input type="checkbox" id="Desktop" name="Desktop" /> Desktop
+                <input type="checkbox" id="Desktop" name="Desktop" defaultChecked={dados?.desktop}/> Desktop
               </label>
               <label>
-                <input type="checkbox" id="Monitor" name="Monitor" /> Monitor
+                <input type="checkbox" id="Monitor" name="Monitor" defaultChecked={dados?.monitor}/> Monitor
               </label>
             </fieldset>
           </div>
@@ -121,7 +122,7 @@ function Formulario({dados}) {
             <label htmlFor="tecnico">
               Nome do Técnico <span style={{ color: "red" }}>*</span>
             </label>
-            <input list="lista-tecnicos" id="tecnico" name="tecnico" required />
+            <input list="lista-tecnicos" id="tecnico" name="tecnico" required defaultValue={dados?.tecnico}/>
             <datalist id="lista-tecnicos">
               <option value="Guilherme " />
               <option value="Fulano" />
@@ -131,26 +132,26 @@ function Formulario({dados}) {
             <label>
               Problema Relatado <span style={{ color: "red" }}>*</span>
             </label>
-            <textarea id="Problema" required></textarea>
+            <textarea id="Problema" required defaultValue={dados?.problemaRelatado}></textarea>
 
             <label>
               Ação Realizada <span style={{ color: "red" }}>*</span>
             </label>
-            <textarea id="Realizada" required></textarea>
+            <textarea id="Realizada" required defaultValue={dados?.realizadoRelatado}></textarea>
 
             <label>
               Assinatura Colaborador <span style={{ color: "red" }}>*</span>
             </label>
-            <Assinatura id="Assinatura"></Assinatura>
+            <Assinatura id="Assinatura" defaultValue={dados?.assinatura}></Assinatura>
             {/* Esse botao precisa ficar desativado para evitar duplicidade: 
             <button type="button" id="Limpar">Limpar</button> */}
             
 
             <label>Data</label>
-            <input type="date" id="Data" />
+            <input type="date" id="Data" defaultValue={dados?.data} />
 
             <label>Hora</label>
-            <input type="time" id="Tempo" required />
+            <input type="time" id="Tempo" defaultValue={dados?.hora}/>
 
             <button type="button" id="compartilhar" onClick={compartilhar}>
             Compartilhar
