@@ -1,4 +1,4 @@
-import html2pdf from 'html2pdf.js';
+/* import html2pdf from 'html2pdf.js';
 
 export function gerarPDF() {
   const conteudo = document.getElementById('conteudo-pdf');
@@ -21,3 +21,4 @@ export function gerarPDF() {
   };
   html2pdf().from(conteudo).set(options).save();
 }
+ */

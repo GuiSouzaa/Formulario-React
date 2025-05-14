@@ -1,17 +1,20 @@
 import React from "react";
-import { gerarPDF } from '../scripts/Gerarpdf';
-import Assinatura from "../scripts/Assinatura";
+/* import { gerarPDF } from '../scripts/Gerarpdf';
+*/import Assinatura from "../scripts/Assinatura";
 import {compartilhar} from '../scripts/LerEnviarDados';
 import logoSonda from '../assets/images/logoSonda.png';
 import logoDasa from '../assets/images/logoDasa.png';
-
+import generatePDF from 'react-to-pdf';
+import { useRef } from 'react';
 
 
 function Formulario({dados}) {
+  const gerarpdf = useRef(); /* Gerar o pdf */
   return (
     
     <div>
-      <div className="container" id="conteudo-pdf">
+
+      <div ref={gerarpdf} className="container" id="conteudo-pdf">
         
         <div className="logoAndTitulo">
           <img className="logoSonda" src={logoSonda} alt="logo sonda" title="Logo Sonda" />
@@ -132,7 +135,12 @@ function Formulario({dados}) {
             <label>
               Problema Relatado <span style={{ color: "red" }}>*</span>
             </label>
-            <textarea id="Problema" required defaultValue={dados?.problemaRelatado}></textarea>
+
+            <div id="Problema"contenteditable="true" defaultValue={dados?.problemaRelatado}>
+              Edite o conteúdo aqui...
+            </div>
+            {/* Tive que alterar para div para nao quebrar o pdf mas agora nao da para salvar os dados no firebase */}
+            {/* <textarea id="Problema" required defaultValue={dados?.problemaRelatado}></textarea> */}
 
             <label>
               Ação Realizada <span style={{ color: "red" }}>*</span>
@@ -153,8 +161,7 @@ function Formulario({dados}) {
             <button type="button" id="compartilhar" onClick={compartilhar}>
             Compartilhar
           </button>
-            <button id="Gerar-PDF" onClick={gerarPDF}>Gerar PDF</button>
-            
+          <button id="Gerar-PDF" onClick={() => generatePDF(gerarpdf, {filename: 'page.pdf'})}>Gerar PDF</button>
 
           </div>
         </form>

@@ -36,7 +36,7 @@ export const compartilhar = async () => {
     const desktop = document.getElementById("Desktop").checked;
     const monitor = document.getElementById("Monitor").checked;
     const tecnico = document.getElementById("tecnico").value;
-    const problemaRelatado = document.getElementById("Problema").value;
+    const problemaRelatado = document.getElementById("Problema").innerText; /* Alterei para inner mas ainda continua com erro */
     const realizadoRelatado = document.getElementById("Realizada").value;
     const assinaturaCanvas = document.getElementById("Assinatura");
     const assinatura = assinaturaCanvas.toDataURL(); //Jeito certo de pegar o valor da assinatura

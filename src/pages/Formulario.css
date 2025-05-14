@@ -10,6 +10,7 @@
   --dasa-vermelho: #ff4e33;
   --dasa-branco: #ffffff;
   --dasa-azul: #0037ff;
+  --dasa-azul-hover: #2f5af6;
   --dasa-amarelo: #e5ff00;
   --dasa-bege: #d1b287;
 }
@@ -86,7 +87,9 @@ input, textarea {
 
 #Problema, #Realizada {
     height: 150px;  
-    font-size: 16px;  
+    font-size: 16px; 
+    resize: none; 
+    
 }
 
 label {
@@ -151,7 +154,7 @@ h1 {
 }
 
 #Limpar:hover {
-    background-color: var(--dasa-azul-escuro);
+    background-color: var(--dasa-azul-hover);
 }
 
 #Gerar-PDF {
@@ -185,7 +188,7 @@ h1 {
 }
 
 #compartilhar:hover{
-    background-color: var(--dasa-azul-escuro);
+    background-color: var(--dasa-azul-hover);
 }
 
 .campo-colab{
@@ -282,5 +285,6 @@ hr {
         max-width: 90px;
         margin-top: 10px;
     }
+    
 }
 
