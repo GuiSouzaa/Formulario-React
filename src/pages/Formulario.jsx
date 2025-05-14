@@ -136,8 +136,12 @@ function Formulario({dados}) {
               Problema Relatado <span style={{ color: "red" }}>*</span>
             </label>
 
-            <div id="Problema"contenteditable="true" defaultValue={dados?.problemaRelatado}>
+            {/* <div id="Problema"contenteditable="true" defaultValue={dados?.problemaRelatado}>
               Edite o conteúdo aqui...
+            </div> */}
+
+             <div id="Problema" contenteditable="true">
+              {dados?.problemaRelatado}
             </div>
             {/* Tive que alterar para div para nao quebrar o pdf mas agora nao da para salvar os dados no firebase */}
             {/* <textarea id="Problema" required defaultValue={dados?.problemaRelatado}></textarea> */}
