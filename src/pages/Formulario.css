@@ -76,7 +76,16 @@ body {
     border: 1px solid #000;
 }
 
-input, textarea {
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.textAreaProblema, .textAreaRealizado{
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -88,8 +97,7 @@ input, textarea {
 #Problema, #Realizada {
     height: 150px;  
     font-size: 16px; 
-    resize: none; 
-    
+    resize: none;  
 }
 
 label {
@@ -259,9 +267,7 @@ hr {
         overflow: visible !important;
     }
 
-    #conteudo-pdf {
-        height: auto !important;
-    }
+   
 }
 
 @media (max-width: 768px){

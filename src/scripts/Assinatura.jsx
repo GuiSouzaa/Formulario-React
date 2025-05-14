@@ -108,7 +108,7 @@ const Assinatura = ({ defaultValue }) => {
           style={{ border: '1px solid black', width: '100%' }}
         ></canvas>
       </div>
-      <button onClick={limparCanvas} id="Limpar">Limpar</button>
+      <button type="button" onClick={limparCanvas} id="Limpar">Limpar</button>
     </div>
   );
 };

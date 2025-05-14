@@ -1,20 +1,17 @@
 import React from "react";
-/* import { gerarPDF } from '../scripts/Gerarpdf';
-*/import Assinatura from "../scripts/Assinatura";
+import { gerarPDF } from '../scripts/Gerarpdf';
+import Assinatura from "../scripts/Assinatura";
 import {compartilhar} from '../scripts/LerEnviarDados';
 import logoSonda from '../assets/images/logoSonda.png';
 import logoDasa from '../assets/images/logoDasa.png';
-import generatePDF from 'react-to-pdf';
-import { useRef } from 'react';
 
 
 function Formulario({dados}) {
-  const gerarpdf = useRef(); /* Gerar o pdf */
   return (
     
     <div>
 
-      <div ref={gerarpdf} className="container" id="conteudo-pdf">
+      <div className="container" id="conteudo-pdf">
         
         <div className="logoAndTitulo">
           <img className="logoSonda" src={logoSonda} alt="logo sonda" title="Logo Sonda" />
@@ -114,6 +111,7 @@ function Formulario({dados}) {
               </label>
               <label>
                 <input type="checkbox" id="Desktop" name="Desktop" checked={dados?.desktop}/> Desktop
+                
               </label>
               <label>
                 <input type="checkbox" id="Monitor" name="Monitor" checked={dados?.monitor}/> Monitor
@@ -136,20 +134,16 @@ function Formulario({dados}) {
               Problema Relatado <span style={{ color: "red" }}>*</span>
             </label>
 
-            {/* <div id="Problema"contenteditable="true" defaultValue={dados?.problemaRelatado}>
-              Edite o conteúdo aqui...
-            </div> */}
-
-             <div id="Problema" contenteditable="true">
-              {dados?.problemaRelatado}
-            </div>
-            {/* Tive que alterar para div para nao quebrar o pdf mas agora nao da para salvar os dados no firebase */}
-            {/* <textarea id="Problema" required defaultValue={dados?.problemaRelatado}></textarea> */}
-
+             <div className="textAreaProblema" id="Problema" contenteditable="true">
+               {dados?.problemaRelatado}
+             </div>
+           
             <label>
               Ação Realizada <span style={{ color: "red" }}>*</span>
             </label>
-            <textarea id="Realizada" required defaultValue={dados?.realizadoRelatado}></textarea>
+            <div className="textAreaRealizado" id="Realizada" contentEditable="true">
+              {dados?.realizadoRelatado}
+            </div>
 
             <label>
               Assinatura Colaborador <span style={{ color: "red" }}>*</span>
@@ -163,10 +157,13 @@ function Formulario({dados}) {
             <input type="time" id="Tempo" defaultValue={dados?.hora}/>
 
             <button type="button" id="compartilhar" onClick={compartilhar}>
-            Compartilhar
-          </button>
-          <button id="Gerar-PDF" onClick={() => generatePDF(gerarpdf, {filename: 'page.pdf'})}>Gerar PDF</button>
+              Compartilhar
+            </button>
 
+            <button type="button" id="Gerar-PDF" onClick={gerarPDF}>
+              Gerar PDF
+            </button>
+            
           </div>
         </form>
       </div>
