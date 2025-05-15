@@ -13,33 +13,45 @@
   --dasa-azul-hover: #2f5af6;
   --dasa-amarelo: #e5ff00;
   --dasa-bege: #d1b287;
+  --verde: #28a745;
+  
+  --noturno-fundo: #202123;
+  --noturno-container: #2a2b2e;
+  --noturno-texto: #ececf1;
+  --noturno-texto-secundario: #a9a9b3;
+  --noturno-verde: #10a37f;
+  --noturno-verde-hover: #0e8a6c;
+  --noturno-azul: #1e90ff;
+  --noturno-azul-hover: #1c7ed6;
+  --noturno-borda: #3e3f4b;
+  --noturno-input: #313133;
+  --noturno-assinatura:  #5e5e61;
+  --noturno-borda-escura: 1px solid #515151;
 }
 
 body{
     background-color: var(--dasa-azul-claro);
 }
 
-/* Aqui estava o bug que deixava a tela pequena 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;     
-    min-height: 100vh;       
-    background-color: #f5f5f5; 
-} */
+body.Noturno {
+  background-color: var(--noturno-fundo);
+  
+}
+
 
 .container {
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--dasa-branco);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.Noturno .container{
+    background-color: var(--noturno-container);
 }
 
 .logoAndTitulo {
@@ -71,9 +83,15 @@ body {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--dasa-branco);
     padding: 20px;
     border: 1px solid #000;
+}
+
+body.Noturno #form-rat{
+    background-color: var(--noturno-container);
+    border: 1px solid rgba(255, 255, 255, 0.414); 
+    
 }
 
 input {
@@ -83,6 +101,11 @@ input {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+}
+body.Noturno input{
+    background-color: var(--noturno-input);
+    color: var(--dasa-branco);
+    border:var(--noturno-borda-escura)
 }
 
 .textAreaProblema, .textAreaRealizado{
@@ -94,10 +117,21 @@ input {
     font-size: 14px;
 }
 
+body.Noturno .textAreaProblema, 
+body.Noturno .textAreaRealizado{
+    background-color: var(--noturno-input);
+    color: var(--dasa-branco);
+    border:var(--noturno-borda-escura)
+}
+
 #Problema, #Realizada {
     height: 150px;  
     font-size: 16px; 
     resize: none;  
+}
+body.Noturno #Problema, 
+body.Noturno #Realizada {
+    background-color: var(--noturno-input);
 }
 
 label {
@@ -105,10 +139,17 @@ label {
     display: block;
     margin-top: 10px;
 }
+body.Noturno label{
+    color: var(--dasa-branco)
+}
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
+}
+
+body.Noturno h1{
+    color: var(--dasa-branco)
 }
 
 
@@ -125,6 +166,13 @@ h1 {
     border-radius: 6px;
 }
 
+body.Noturno .checkbox-tipo-atendimento,
+body.Noturno .tipo-equipamento{
+    background-color: var(--noturno-input);
+    color: var(--dasa-branco);
+    border:var(--noturno-borda-escura)
+}
+
 .checkbox-tipo-atendimento label,
 .tipo-equipamento label {
     display: inline-flex;
@@ -134,9 +182,13 @@ h1 {
     font-size: 16px;
     margin-bottom: 5px;
     cursor: pointer;
-    
 }
 
+body.Noturno .checkbox-tipo-atendimento label, 
+body.Noturno .tipo-equipamento label {
+    background-color: var(--noturno-input);
+    color: var(--dasa-branco);
+}
 
 #Assinatura {
     width: 100%;
@@ -148,12 +200,17 @@ h1 {
     background-color: #f9f9f9; 
 }
 
+body.Noturno #Assinatura {
+    background-color: var(--noturno-assinatura);
+    border:var(--noturno-borda-escura)
+}
+
 #Limpar {
     display: block;
     margin: 20px 0 10px;
     padding: 8px 30px;
     background-color: var(--dasa-azul);  
-    color: white;               
+    color: var(--dasa-branco);               
     border: none;
     border-radius: 5px;        
     font-size: 16px;
@@ -169,8 +226,8 @@ h1 {
     display: block;
     margin: 10px 0;
     padding: 8px 30px;
-    background-color: #28a745; 
-    color: white;               
+    background-color: var(--verde);
+    color: var(--dasa-branco);               
     border: none;
     border-radius: 5px;         
     font-size: 16px;
@@ -187,7 +244,7 @@ h1 {
     margin: 10px 0;
     padding: 8px 30px;
     background-color: var(--dasa-azul);  
-    color: white;               
+    color:var(--dasa-branco);               
     border: none;
     border-radius: 5px;         
     font-size: 16px;
@@ -204,11 +261,20 @@ h1 {
     font-weight: bold;  
     font-size: 16px;
 }
+body.Noturno .campo-colab{
+    color: var(--dasa-branco);
+}
+
+
 hr{
     border: none;
     border-top: 1px solid #817f7f;
     margin: 20px 0px;  
     margin-bottom: 20px;
+}
+body.Noturno hr {
+    background-color: var(--dasa-branco);
+   
 }
 
 .campo-field {
@@ -217,13 +283,9 @@ hr{
     font-size: 16px;
     margin: 20px 0 10px 0; /* 20px acima, 10px abaixo */
 }
-
-hr {
-    border: none;
-    border-top: 1px solid #000000;
-    margin: 10px 0 20px 0; 
+body.Noturno .campo-field{
+    color: var(--dasa-branco);
 }
-
 
 
 /* Desing responsivel */

@@ -1,0 +1,28 @@
+   /* Fundo geral */
+  --noturno-fundo: #202123;
+  --noturno-container: #2a2b2e;
+
+  /* Texto */
+  --noturno-texto: #ececf1;
+  --noturno-texto-secundario: #a9a9b3;
+
+  /* Cores de destaque (ChatGPT usa verdes e azuis suaves) */
+  --noturno-verde: #10a37f;
+  --noturno-verde-hover: #0e8a6c;
+
+  --noturno-azul: #1e90ff;
+  --noturno-azul-hover: #1c7ed6;
+
+  --noturno-borda: #3e3f4b;
+
+
+Alterar todas as cores para as variaveis
+
+--dasa-azul-escuro: #000e40;
+  --dasa-azul-claro: #a6e1ff;
+  --dasa-vermelho: #ff4e33;
+  --dasa-branco: #ffffff;
+  --dasa-azul: #0037ff;
+  --dasa-azul-hover: #2f5af6;
+  --dasa-amarelo: #e5ff00;
+  --dasa-bege: #d1b287;

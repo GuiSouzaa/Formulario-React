@@ -11,7 +11,6 @@ export function gerarPDF() {
     nomeArquivo = 'RAT';
   }
 
-
   const options = {
     margin: [10, 10, 10, 10],
     filename: nomeArquivo,

@@ -7,10 +7,16 @@ import logoDasa from '../assets/images/logoDasa.png';
 
 
 function Formulario({dados}) {
+  const alternarModo = () => {
+    document.body.classList.toggle('Noturno');
+  };
   return (
     
     <div>
-
+      <button className="botaoNoturno" onClick={alternarModo}>
+        
+        Alternar modo
+      </button>
       <div className="container" id="conteudo-pdf">
         
         <div className="logoAndTitulo">
@@ -134,7 +140,7 @@ function Formulario({dados}) {
               Problema Relatado <span style={{ color: "red" }}>*</span>
             </label>
 
-             <div className="textAreaProblema" id="Problema" contenteditable="true">
+             <div className="textAreaProblema" id="Problema" contentEditable="true">
                {dados?.problemaRelatado}
              </div>
            

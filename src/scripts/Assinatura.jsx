@@ -91,7 +91,7 @@ const Assinatura = ({ defaultValue }) => {
       canvas.removeEventListener('touchmove', moveTouch);
       canvas.removeEventListener('touchend', endTouch);
     };
-  }, [defaultValue]); // <- precisa escutar alterações de defaultValue que está no meu id da Assinatura
+  }, [defaultValue]); // Precisa escutar alterações de defaultValue que está no meu id da Assinatura
 
   const limparCanvas = () => {
     const canvas = canvasRef.current;
