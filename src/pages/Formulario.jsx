@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { gerarPDF } from '../scripts/Gerarpdf';
-import Assinatura from "../scripts/Assinatura";
-import {compartilhar} from '../scripts/LerEnviarDados';
-import logoSonda from '../assets/images/logoSonda.png';
-import logoDasa from '../assets/images/logoDasa.png';
+import { gerarPDF } from '@/scripts/Gerarpdf';
+import Assinatura from "@/scripts/Assinatura";
+import {compartilhar} from '@/scripts/LerEnviarDados';
+import logoSonda from '@/assets/images/logoSonda.png';
+import logoDasa from '@/assets/images/logoDasa.png';
 import { FaMoon, FaSun } from 'react-icons/fa'; 
 
 
