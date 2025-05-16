@@ -10,7 +10,7 @@ const Assinatura = ({ defaultValue }) => {
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
-      canvas.height = 150;
+      canvas.height = 150; // Alterar aqui e no Css para mudar o tamanho.
     };
 
     window.addEventListener('resize', resizeCanvas);

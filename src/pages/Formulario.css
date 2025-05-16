@@ -31,6 +31,8 @@
 
 body{
     background-color: var(--dasa-azul-claro);
+    transition: background-color 0.4s ease, color 0.4s ease;
+
 }
 
 body.Noturno {
@@ -48,6 +50,8 @@ body.Noturno {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.4s ease, color 0.4s ease;
+
 }
 
 body.Noturno .container{
@@ -86,6 +90,8 @@ body.Noturno .container{
     background-color: var(--dasa-branco);
     padding: 20px;
     border: 1px solid #000;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
 }
 
 body.Noturno #form-rat{
@@ -101,6 +107,8 @@ input {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
 }
 body.Noturno input{
     background-color: var(--noturno-input);
@@ -287,6 +295,17 @@ body.Noturno .campo-field{
     color: var(--dasa-branco);
 }
 
+.botaoNoturno{
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 30px; 
+    height: 20px;
+    display: block;
+    object-fit: contain;
+}
 
 /* Desing responsivel */
 

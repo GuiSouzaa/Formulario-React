@@ -1,31 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { gerarPDF } from '../scripts/Gerarpdf';
 import Assinatura from "../scripts/Assinatura";
 import {compartilhar} from '../scripts/LerEnviarDados';
 import logoSonda from '../assets/images/logoSonda.png';
 import logoDasa from '../assets/images/logoDasa.png';
+import { FaMoon, FaSun } from 'react-icons/fa'; 
+
 
 
 function Formulario({dados}) {
+  const [modoNoturno, setModoNoturno] = useState(false);
   const alternarModo = () => {
-    document.body.classList.toggle('Noturno');
+    if(modoNoturno == false)
+    {
+      setModoNoturno(true)
+      document.body.classList.add('Noturno');
+    }
+    else
+    {
+      setModoNoturno(false);
+      document.body.classList.remove('Noturno');
+    }
   };
+
   return (
     
     <div>
-      <button className="botaoNoturno" onClick={alternarModo}>
-        
-        Alternar modo
-      </button>
       <div className="container" id="conteudo-pdf">
-        
+
+        <button className="botaoNoturno" onClick={alternarModo}>
+          {modoNoturno ? <FaSun color="#fff" size={20} /> : <FaMoon color="#000" size={20} />}
+        </button>
+
         <div className="logoAndTitulo">
           <img className="logoSonda" src={logoSonda} alt="logo sonda" title="Logo Sonda" />
         <h1>RAT - Ordem de Serviço</h1>
         <img className="logoDasa" src={logoDasa} alt="Logo dasa" title="Logo Dasa" />
         </div>
-        
-        
+          
         <form id="form-rat">
           <p className="campo-colab">Campo Colaborador</p>
           <hr />
@@ -102,7 +114,6 @@ function Formulario({dados}) {
                 <input type="checkbox" id="Field" name="Field" checked={dados?.field}/> Field
               </label>
               <label>
-                
                 <input type="checkbox" id="Remoto" name="Remoto" checked={dados?.remoto}/> Remoto
               </label>
               <label>
@@ -117,7 +128,6 @@ function Formulario({dados}) {
               </label>
               <label>
                 <input type="checkbox" id="Desktop" name="Desktop" checked={dados?.desktop}/> Desktop
-                
               </label>
               <label>
                 <input type="checkbox" id="Monitor" name="Monitor" checked={dados?.monitor}/> Monitor
