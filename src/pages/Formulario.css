@@ -65,7 +65,8 @@ body.Noturno .container{
   }
   
   .logoSonda {
-    max-width: 150px;
+    margin-top: 10px;
+    max-width: 130px;
     height: auto;
   }
   

@@ -22,6 +22,7 @@ export const compartilhar = async () => {
     const cidade = document.getElementById("Cidade").value;
     const estado = document.getElementById("Estado").value;
     const setor = document.getElementById("Setor").value;
+    const centroCusto = document.getElementById("CentroCusto").value;
     const colaborador = document.getElementById("Colaborador").value;
     const telefone = document.getElementById("Telefone").value;
     const chamado = document.getElementById("Chamado").value;
@@ -35,9 +36,13 @@ export const compartilhar = async () => {
     const notebook = document.getElementById("Notebook").checked;
     const desktop = document.getElementById("Desktop").checked;
     const monitor = document.getElementById("Monitor").checked;
+    const etiquetadora = document.getElementById("Etiquetadora").checked;
+    const impressora = document.getElementById("Impressora").checked;
+    const outros = document.getElementById("Outros").checked;
     const tecnico = document.getElementById("tecnico").value;
     const problemaRelatado = document.getElementById("Problema").innerText; /* Inner para pegar o valor da div contenteditable */
     const realizadoRelatado = document.getElementById("Realizada").innerText;
+    const nomeAssinante = document.getElementById("NomeAssinante").value;
     const assinaturaCanvas = document.getElementById("Assinatura");
     const assinatura = assinaturaCanvas.toDataURL(); //Jeito certo de pegar o valor da assinatura
     const data = document.getElementById("Data").value;
@@ -49,6 +54,7 @@ export const compartilhar = async () => {
       cidade,
       estado,
       setor,
+      centroCusto,
       colaborador,
       telefone,
       chamado,
@@ -62,9 +68,13 @@ export const compartilhar = async () => {
       notebook,
       desktop,
       monitor,
+      etiquetadora,
+      impressora,
+      outros,
       tecnico,
       problemaRelatado,
       realizadoRelatado,
+      nomeAssinante,
       assinatura,
       data,
       hora
